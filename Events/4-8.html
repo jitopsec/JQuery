@@ -15,7 +15,16 @@
     <script type="text/javascript">
         $(function() {
             var oTxt = $("input"); //获取文本框
-            oTxt.trigger("select"); //自动选中文本框
+            //oTxt.trigger("select"); //自动选中文本框
+            oTxt.bind("focus",function(event){
+                    alert(event.data);
+                    if(event.data != null){
+                        alert(event.data.message);
+                    }
+
+            }) ;
+            oTxt.trigger("focus",{"message":"Hi"}); //自动选中文本框
+
             oTxt.bind("btn_Click", function() {//编写文本框自定义事件
                 var txt = $(this).val(); //获取自身内容
                 $("#divTip").html(txt); //显示在页面中

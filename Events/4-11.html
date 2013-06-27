@@ -41,6 +41,7 @@
               curH = obj.height();
               curW = obj.width();
               srtY = curY + (curH / 2) + "px"; //设置提示箭头的Top值
+              //srtX = curW - 5 + "px"; //设置提示箭头的Left值
               srtX = curW - 5 + "px"; //设置提示箭头的Left值
           }
           $(".optn").mouseover(function() {//设置当前所选项的鼠标滑过事件
@@ -57,13 +58,15 @@
               $("#sort").hide(); //隐藏提示箭头
           })
           $(".tip").mousemove(function() {
+
               $(this).show(); //显示提示框
               objL = $(this).prev("li"); //获取当前的上级li对象
               setInitValue(objL); //设置当前位置
               objL.addClass("optnFocus"); //增加上级li对象获取焦点时的样式
-              $("#sort").show().css({ "top": srtY, "left": srtX }); //显示并设置提示箭头的坐标
+             $("#sort").show().css({ "top": srtY, "left": srtX }); //显示并设置提示箭头的坐标
           })
           .mouseout(function() {
+
               $(this).hide(); //隐藏提示框
               $(this).prev("li").removeClass("optnFocus"); //删除获取焦点时的样式
               $("#sort").hide(); //隐藏提示箭头

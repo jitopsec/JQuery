@@ -20,6 +20,7 @@
                 $("#divTip").append("<div>按钮二的单击事件</div>");
             }
             $("input:eq(0)").bind("click", function() { //绑定单击事件
+                $("#divTip div").remove();
                 $("#divTip").append("<div>按钮一的单击事件</div>");
             });
             $("input:eq(1)").bind("click", oClick); //绑定自定义事件

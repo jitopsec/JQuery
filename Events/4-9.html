@@ -25,14 +25,16 @@
     </style>
     <script type="text/javascript">
         $(function() {
-            $("#txtEmail").trigger("focus");//默认时文本框获取焦点
-
+             $("#txtEmail").trigger("focus");//默认时文本框获取焦点
+             //$("#txtUsername").trigger("focus");
             $("#txtEmail").focus(function() {//文本框获取焦点事件
                 $(this).removeClass("txtBlur").addClass("txtInit");
                 $("#email").removeClass("divBlur").addClass("divFocu");
                 $("#spnTip").removeClass("spnBlur")
                 .removeClass("spnSucc").html("请输入您常用邮箱地址！");
             })
+
+
 
             $("#txtEmail").blur(function() {//文本框丢失焦点事件
                 var vtxt = $("#txtEmail").val();
@@ -71,6 +73,12 @@
 </head>
 <body>
    <form id="form1" action="#">
+
+       <div id="username" class="divInit">用户名：
+           <span id="spnTip_u" class="spnInit"></span>
+           <input id="txtUsername" type="text" class="txtInit" />
+       </div>
+
       <div id="email" class="divInit">邮箱：
            <span id="spnTip" class="spnInit"></span>
            <input id="txtEmail" type="text" class="txtInit" />
